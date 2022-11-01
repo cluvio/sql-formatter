@@ -160,6 +160,8 @@ export default class BigQueryFormatter extends Formatter {
         "''-bs",
         { quote: '""-raw', prefixes: ['R', 'B', 'RB', 'BR'], requirePrefix: true },
         { quote: "''-raw", prefixes: ['R', 'B', 'RB', 'BR'], requirePrefix: true },
+        '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+        '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
       ],
       identTypes: ['``'],
       identChars: { dashes: true },

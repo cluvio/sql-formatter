@@ -245,6 +245,8 @@ export default class SingleStoreDbFormatter extends Formatter {
         '""-qq-bs',
         "''-qq-bs",
         { quote: "''-raw", prefixes: ['B', 'X'], requirePrefix: true },
+        '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+        '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
       ],
       identTypes: ['``'],
       identChars: { first: '$', rest: '$', allowFirstCharNumber: true },

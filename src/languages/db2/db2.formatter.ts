@@ -187,6 +187,8 @@ export default class Db2Formatter extends Formatter {
       stringTypes: [
         { quote: "''-qq", prefixes: ['G', 'N', 'U&'] },
         { quote: "''-raw", prefixes: ['X', 'BX', 'GX', 'UX'], requirePrefix: true },
+        '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+        '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
       ],
       identTypes: [`""-qq`],
       paramTypes: { positional: true, named: [':'] },

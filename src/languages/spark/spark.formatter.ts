@@ -133,6 +133,8 @@ export default class SparkFormatter extends Formatter {
         '""-bs',
         { quote: "''-raw", prefixes: ['R', 'X'], requirePrefix: true },
         { quote: '""-raw', prefixes: ['R', 'X'], requirePrefix: true },
+        '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+        '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
       ],
       identTypes: ['``'],
       variableTypes: [{ quote: '{}', prefixes: ['$'], requirePrefix: true }],

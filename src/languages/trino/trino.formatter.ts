@@ -139,6 +139,8 @@ export default class TrinoFormatter extends Formatter {
       stringTypes: [
         { quote: "''-qq", prefixes: ['U&'] },
         { quote: "''-raw", prefixes: ['X'], requirePrefix: true },
+        '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+        '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
       ],
       // https://trino.io/docs/current/language/reserved.html
       identTypes: ['""-qq'],

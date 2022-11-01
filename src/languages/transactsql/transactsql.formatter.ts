@@ -228,7 +228,11 @@ export default class TransactSqlFormatter extends Formatter {
       reservedKeywords: keywords,
       reservedFunctionNames: functions,
       nestedBlockComments: true,
-      stringTypes: [{ quote: "''-qq", prefixes: ['N'] }],
+      stringTypes: [
+        { quote: "''-qq", prefixes: ['N'] },
+        '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+        '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
+      ],
       identTypes: [`""-qq`, '[]'],
       identChars: { first: '#@', rest: '#@$' },
       paramTypes: { named: ['@'], quoted: ['@'] },
