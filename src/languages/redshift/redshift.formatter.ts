@@ -149,7 +149,11 @@ export const redshift: DialectOptions = {
     reservedPhrases,
     reservedKeywords: keywords,
     reservedFunctionNames: functions,
-    stringTypes: ["''-qq"],
+    stringTypes: [
+      "''-qq",
+      '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+      '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
+    ],
     identTypes: [`""-qq`],
     identChars: { first: '#' },
     paramTypes: { numbered: ['$'] },
