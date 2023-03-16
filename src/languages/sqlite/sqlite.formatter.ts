@@ -78,6 +78,8 @@ export const sqlite: DialectOptions = {
       { quote: "''-raw", prefixes: ['X'], requirePrefix: true },
       // Depending on context SQLite also supports double-quotes for strings,
       // and single-quotes for identifiers.
+      '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+      '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
     ],
     identTypes: [`""-qq`, '``', '[]'],
     // https://www.sqlite.org/lang_expr.html#parameters

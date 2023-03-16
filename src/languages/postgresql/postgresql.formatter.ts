@@ -269,6 +269,8 @@ export const postgresql: DialectOptions = {
       { quote: "''-qq", prefixes: ['U&'] },
       { quote: "''-bs", prefixes: ['E'], requirePrefix: true },
       { quote: "''-raw", prefixes: ['B', 'X'], requirePrefix: true },
+      '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+      '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
     ],
     identTypes: [{ quote: '""-qq', prefixes: ['U&'] }],
     identChars: { rest: '$' },

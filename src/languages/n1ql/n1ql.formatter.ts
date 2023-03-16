@@ -96,7 +96,12 @@ export const n1ql: DialectOptions = {
     // NOTE: single quotes are actually not supported in N1QL,
     // but we support them anyway as all other SQL dialects do,
     // which simplifies writing tests that are shared between all dialects.
-    stringTypes: ['""-bs', "''-bs"],
+    stringTypes: [
+      '""-bs',
+      "''-bs",
+      '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+      '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
+    ],
     identTypes: ['``'],
     extraParens: ['[]', '{}'],
     paramTypes: { positional: true, numbered: ['$'], named: ['$'] },
