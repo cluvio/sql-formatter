@@ -96,6 +96,8 @@ export const plsql: DialectOptions = {
     stringTypes: [
       { quote: "''-qq", prefixes: ['N'] },
       { quote: "q''", prefixes: ['N'] },
+      '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+      '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
     ],
     // PL/SQL doesn't actually support escaping of quotes in identifiers,
     // but for the sake of simpler testing we'll support this anyway

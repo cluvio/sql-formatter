@@ -87,6 +87,8 @@ export const sql: DialectOptions = {
     stringTypes: [
       { quote: "''-qq-bs", prefixes: ['N', 'U&'] },
       { quote: "''-raw", prefixes: ['X'], requirePrefix: true },
+      '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+      '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
     ],
     identTypes: [`""-qq`, '``'],
     paramTypes: { positional: true },

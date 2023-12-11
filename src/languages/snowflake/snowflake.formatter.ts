@@ -305,7 +305,12 @@ export const snowflake: DialectOptions = {
     reservedKeywords: keywords,
     reservedDataTypes: dataTypes,
     reservedFunctionNames: functions,
-    stringTypes: ['$$', `''-qq-bs`],
+    stringTypes: [
+      '$$',
+      `''-qq-bs`,
+      '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+      '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
+    ],
     identTypes: ['""-qq'],
     variableTypes: [
       // for accessing columns at certain positons in the table
