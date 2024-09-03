@@ -97,7 +97,12 @@ export const hive: DialectOptions = {
     reservedDataTypes: dataTypes,
     reservedFunctionNames: functions,
     extraParens: ['[]'],
-    stringTypes: ['""-bs', "''-bs"],
+    stringTypes: [
+      '""-bs',
+      "''-bs",
+      '{}', // Cluvio query parameters (piggy-back on Hive & Spark variable syntax support)
+      '[]', // Cluvio SQL snippets (piggy-back on Transact-SQL syntax support).
+    ],
     identTypes: ['``'],
     variableTypes: [{ quote: '{}', prefixes: ['$'], requirePrefix: true }],
     operators: ['%', '~', '^', '|', '&', '<=>', '==', '!', '||'],
